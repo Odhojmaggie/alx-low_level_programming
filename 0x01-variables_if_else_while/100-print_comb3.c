@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - prints a combination of numbers
+ * main - prints all possible combinations of numbers
  *
  * Return: Always (Success)
  */
@@ -13,16 +13,20 @@ int main(void)
 	{
 		for (i = '0'; i <= '9'; i++)
 		{
-			putchar(c);
-			putchar(i);
-
-			if (c != '8' || (c == '8' && i != '9'))
+			if (c < i)
 			{
-				putchar(',');
-				putchar(' ');
+				putchar(c);
+				putchar(i);
+
+				if (c != '8' || (c == '8' && i != '9'))
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
+
 	putchar('\n');
 
 	return (0);
